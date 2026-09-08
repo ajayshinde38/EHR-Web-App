@@ -20,9 +20,9 @@ python-docx==0.8.11
 # SMS Integration
 twilio==8.10.0
 # OCR Dependencies
-pytesseract==0.3.10
-opencv-python==4.8.1.78
-easyocr==1.7.0
+pytesseract>=0.3.10
+opencv-python-headless>=4.8.0.76
+easyocr>=1.7.0
 # Image processing and enhancement
 scikit-image==0.21.0
 imutils==0.5.4
