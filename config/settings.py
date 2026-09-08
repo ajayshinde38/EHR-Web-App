@@ -7,6 +7,16 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+# Automatically sync Streamlit Cloud secrets into os.environ
+try:
+    import streamlit as st
+    if hasattr(st, "secrets"):
+        for key, value in st.secrets.items():
+            if isinstance(value, (str, int, float, bool)):
+                os.environ[str(key)] = str(value)
+except Exception:
+    pass
+
 # Application Configuration
 APP_CONFIG = {
     "app_name": "EHR Web App",
